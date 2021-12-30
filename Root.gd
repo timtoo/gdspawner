@@ -30,6 +30,10 @@ func _process(delta):
 		add_child(spawn)
 		spawn.generate("SpiralBurst", random_screen_position())
 	
-	
+	if randi() % 200 == 0:
+		var spawn = spawner.instance()
+		add_child(spawn)
+		spawn.generate("WavyLine", random_screen_position())
+		
 	
 
