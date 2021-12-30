@@ -27,5 +27,5 @@ func _physics_process(delta: float):
 func _process(delta: float):
 	if (global_position.x < minBound.x || global_position.x -1 > maxBound.x || 
 			global_position.y < minBound.y || global_position.y -1 > maxBound.y):
-		print("bye-bye from ", get_instance_id())
+		#print("bye-bye from ", get_instance_id())
 		queue_free()

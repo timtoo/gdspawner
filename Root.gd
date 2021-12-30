@@ -20,12 +20,16 @@ func _process(delta):
 		add_child(spawn)
 		spawn.generate("CircleBurst", random_screen_position()).count = (randi() % 46) + 5
 
-	if randi() % 200 == 0:
+	if randi() % 150 == 0:
 		var spawn = spawner.instance()
 		add_child(spawn)
 		spawn.generate("CircleBurst2", random_screen_position()).count = (randi() % 46) + 5
 
-
+	if randi() % 200 == 0:
+		var spawn = spawner.instance()
+		add_child(spawn)
+		spawn.generate("SpiralBurst", random_screen_position())
+	
 	
 	
 

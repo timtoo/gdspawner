@@ -28,7 +28,7 @@ func create_particle(pos: Vector2, rotation_degrees:int=0) -> KinematicBody2D:
 		particle.rotation_degrees = rotation_degrees
 		add_child(particle)
 		active_particles.append(particle)
-		print (particle.get_instance_id(), " is alive! ", particle.position, '/', active_particles.size())
+		#print (particle.get_instance_id(), " is alive! ", particle.position, '/', active_particles.size())
 	else:
 		print ("Inactive particle?!")
 	return particle

@@ -15,7 +15,6 @@ func _ready():
 	add_child(timer)
 
 func timer_timeout():
-	print("TIMEOUT.............................")
 	wait = false
 
 func _physics_process(delta):
