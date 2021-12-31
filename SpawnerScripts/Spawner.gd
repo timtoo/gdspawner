@@ -10,6 +10,7 @@ func generate(name:String, pos:Vector2 = Vector2.ZERO) -> Node2D:
 	add_child(node)
 	spawner_list.append(node)
 	print("Generated spawner ", name)
+
 	return node
 
 

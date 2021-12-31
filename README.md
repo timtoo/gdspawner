@@ -18,6 +18,12 @@ and it is a mess. It's basically the first way I could figure out, probably not 
 FURTHUR WARNING: while the particle objects do free/destory themselves when they go off the screen,
 the spawner objects currently are not cleaned up, so memory is slowly leaking...
 
+Nevertheless, enjoy.
+
+https://timtoo.github.io/gdspawner/
+
+(p.s. press `c` for a big mess)
+
 ## Code breakdown
 
 - `Root.gd` - controls the frequency of the different types of spawners generating
@@ -27,3 +33,4 @@ the spawner objects currently are not cleaned up, so memory is slowly leaking...
 - `MoveThing.gd` - just keeps an object moving, with some zig-zaggy options
 - `particle.gd` - does nothing (except set screen edge buffer width)! All the code is in `MoveThing.gd`.
 
+Source code: https://github.com/timtoo/gdspawner/

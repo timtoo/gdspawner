@@ -29,9 +29,11 @@ func create_particle(pos: Vector2, rotation_degrees:int=0) -> KinematicBody2D:
 		add_child(particle)
 		active_particles.append(particle)
 		#print (particle.get_instance_id(), " is alive! ", particle.position, '/', active_particles.size())
+		particle.get_node("CollisionShape2D").disabled = ! get_parent().get_parent().collision_enabled
 	else:
 		print ("Inactive particle?!")
 	return particle
+
 
 func _process(delta):
 	# go backwards through list and remove deleted items
