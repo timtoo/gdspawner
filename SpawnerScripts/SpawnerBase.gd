@@ -23,6 +23,9 @@ func _ready():
 func random_screen_position() -> Vector2:
 	return Vector2(randi() % int(screen_size.x), randi() % int(screen_size.y))
 
+func random_color() -> Color:
+	return Color(randf(), randf(), randf())
+
 func create_particle(pos: Vector2, rotation_degrees:int=0) -> KinematicBody2D:
 	var particle: KinematicBody2D = particle_scene.instance()
 	if active:

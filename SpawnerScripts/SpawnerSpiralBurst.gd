@@ -4,6 +4,7 @@ var spread: int = (randi() % 5 + 1) * 5
 var inner_radius: int = 0
 var start_angle = randf() * 360
 var angle = start_angle
+var color: Color = Color(0.4,0.3,0.8)
 
 var current: int = 0
 var wait: bool = false
@@ -17,13 +18,15 @@ func _ready():
 	timer.wait_time = 0.05
 	timer.connect("timeout", self, "timer_timeout")
 	add_child(timer)
+	color = random_color()
 
 func timer_timeout():
 	wait = false
 
 func _physics_process(delta):
 	if wait == false && current < count:
-		create_particle(position, angle).modulate = Color(0.4,0.3,0.8 - (current/120))
+		var cm:float = 1.0 - (float(current) / count / 2.0)
+		create_particle(position, angle).modulate = Color(color.r*cm, color.g*cm, color.b*cm)
 		wait = true
 		angle += spread
 		current += 1

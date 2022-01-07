@@ -6,6 +6,9 @@ var color: Color = Color(0,1,0)
 func _init():
 	count = 10
 
+func _ready():
+	color = random_color()
+
 func _physics_process(delta):
 	if ! setup_done:
 		var start_angle = randf() * 360
