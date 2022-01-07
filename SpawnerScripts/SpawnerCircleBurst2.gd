@@ -1,6 +1,5 @@
 extends SpawnerBase
 
-var count: int = 10
 var levels: int = randi() % 7 + 3
 var inner_radius: int = 0
 
@@ -8,6 +7,9 @@ var level: int = 0
 var wait: bool = false
 
 var timer: Timer = Timer.new()
+
+func _init():
+	count = 10
 
 func _ready():
 	timer.wait_time = 0.1

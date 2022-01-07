@@ -1,6 +1,5 @@
 extends SpawnerBase
 
-var count: int = randi() % 100 + 20
 var spread: int = (randi() % 5 + 1) * 5
 var inner_radius: int = 0
 var start_angle = randf() * 360
@@ -10,6 +9,9 @@ var current: int = 0
 var wait: bool = false
 
 var timer: Timer = Timer.new()
+
+func _init():
+	count = randi() % 100 + 20
 
 func _ready():
 	timer.wait_time = 0.05

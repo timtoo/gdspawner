@@ -2,7 +2,7 @@ Bursty, move-y, wiggly things
 -----------------------------
 
 This code was really mostly an investigation of how to do class inheritence with GDScript. 
-But then apparently I also needed to dynamically load plugin-like scripts into the scene. 
+But then apparently I also needed to dynamically load plugin-like scripts into the scene? 
 
 It all started with `MoveThing.gd` which was meant to be a parent class which could 
 cause any script that `extends` it to have certain movement behaviors. 
@@ -13,10 +13,7 @@ creates a new node in the tree and dynamically loads the script matching the `na
 contains the specific animation behavior. 
 
 WARNING: there is certainly a lot wrong with this code, as fumbled a lot trying to get it to work,
-and it is a mess. It's basically the first way I could figure out, probably not the best way. But maybe it will provide some ideas or clues to someone. GDScript is a bit mysterious in how it glues objects together. I would recommend C#, if possible.
-
-FURTHUR WARNING: while the particle objects do free/destory themselves when they go off the screen,
-the spawner objects currently are not cleaned up, so memory is slowly leaking...
+and it is a mess. It's basically the first way I could figure out, probably not the best way. For example, the spawners don't have a way to set defaults whent they are created. But maybe it will provide some ideas or clues to someone. Inability to override class variable defaults is still a mystery. GDScript is a bit mysterious in how it glues objects together. I would recommend C#, if possible.
 
 Nevertheless, enjoy.
 
