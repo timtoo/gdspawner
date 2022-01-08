@@ -15,7 +15,8 @@ func _init():
 	count = randi() % 100 + 20
 
 func _ready():
-	timer.wait_time = 0.05
+	timer.wait_time = randf() / 10 + 0.01
+	print("timer wait ", timer.wait_time)
 	timer.connect("timeout", self, "timer_timeout")
 	add_child(timer)
 	color = random_color()
