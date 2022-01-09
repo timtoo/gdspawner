@@ -1,6 +1,5 @@
 extends Node2D
 
-var screen_size: Vector2
 var spawner = preload("res://Spawner.tscn")
 
 var collision_enabled = false  # this is a mess! but for fun...? 
@@ -15,7 +14,9 @@ var spawners: Dictionary = {
 }
 
 func _ready():
-	screen_size = get_viewport().get_visible_rect().size
+	if OS.get_name() == 'HTML5':
+		$WorldEnvironment.queue_free()
+
 	randomize()
 
 	var spawn = spawner.instance()
@@ -23,6 +24,7 @@ func _ready():
 	spawn.generate('RandomLinear')
 
 func random_screen_position() -> Vector2:
+	var screen_size = get_viewport().get_visible_rect().size
 	return Vector2(randi() % int(screen_size.x), randi() % int(screen_size.y))
 
 func _input(event):

@@ -20,12 +20,14 @@ var oscillatorFrequency: float = 1.0
 var oscillatorAngleTimer: Timer = Timer.new()
 
 func _ready():
-	# so we can automatically kill ourselves when out of bounds
+	# so we can automatically kill ourselves when out of bounds	
+	get_tree().get_root().connect("size_changed", self, "set_screensize")
+	set_screensize()
+
+func set_screensize():
 	screen_size = get_viewport().get_visible_rect().size
 	set_buffer(buffer)
-
-func test():
-	pass
+	print("screen size change ", screen_size)
 
 func set_angle_oscillator(degree_range: int, frequency: float, initial_state:int=1):
 	if oscillatorState == 0:

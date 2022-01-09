@@ -5,7 +5,6 @@ class_name SpawnerBase
 var particle_scene: Resource = preload("res://particle/particle.tscn")
 var colors = preload("res://colors.gd").new()
 
-var screen_size: Vector2
 var active: bool = true        # if set to false then new particles are not added to scene
 var setup_done: bool = false   # intended to allow for first-time setup in _process loop
 var count: int = 0             # spawers with negative count are never freed
@@ -17,11 +16,12 @@ var active_particles: Array = []
 var we_have_particle: bool = false    # indicate that any particles have been created
 
 func _ready():
-	screen_size = get_viewport().get_visible_rect().size
 	#print("spawner base loaded (", name, ")")
-	
+	pass
+
 # random location on screen
 func random_screen_position() -> Vector2:
+	var screen_size = get_viewport().get_visible_rect().size
 	return Vector2(randi() % int(screen_size.x), randi() % int(screen_size.y))
 
 func random_rbg() -> Color:
@@ -58,9 +58,4 @@ func _process(delta):
 		if count >= 0:
 			#print("free ", name)
 			get_parent().queue_free()
-
-
-
-			
-
 
