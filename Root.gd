@@ -30,8 +30,12 @@ func random_screen_position() -> Vector2:
 func _input(event):
 	if event is InputEventKey and event.pressed:
 		if event.scancode == KEY_C:
-			collision_enabled = ! collision_enabled
-			print("Collision ?! ", collision_enabled)	
+			var button = $CanvasLayer/CheckButton
+			button.pressed = !collision_enabled
+			
+			# button handles this now; only uncomment if button removed
+			#collision_enabled = ! collision_enabled
+			#print("Collision ?! ", collision_enabled)	
 
 # note: spawn nodes are not cleaned up, so is a memory leak situation
 func _process(delta):
