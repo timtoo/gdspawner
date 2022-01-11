@@ -27,7 +27,6 @@ func _ready():
 func set_screensize():
 	screen_size = get_viewport().get_visible_rect().size
 	set_buffer(buffer)
-	print("screen size change ", screen_size)
 
 func set_angle_oscillator(degree_range: int, frequency: float, initial_state:int=1):
 	if oscillatorState == 0:
